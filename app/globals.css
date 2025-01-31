@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 240 20% 3.9%;
+    --foreground: 0 0% 98%;
+    
+    --card: 240 19% 5.9%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 240 19% 5.9%;
+    --popover-foreground: 0 0% 98%;
+    
+    --primary: 252 87% 67%;
+    --primary-foreground: 240 19% 5.9%;
+    
+    --secondary: 240 19% 9%;
+    --secondary-foreground: 0 0% 98%;
+    
+    --muted: 240 19% 9%;
+    --muted-foreground: 240 5% 84.9%;
+    
+    --accent: 252 87% 67%;
+    --accent-foreground: 240 19% 5.9%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 240 19% 10%;
+    --input: 240 19% 10%;
+    --ring: 252 87% 67%;
+    
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .timeline-mask {
+    mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+  }
+}
+
+/* Custom Gradient Backgrounds */
+.gradient-border {
+  background: linear-gradient(
+    to right,
+    hsl(252, 87%, 67%),
+    hsl(252, 87%, 67%, 0.5)
+  );
+  background-clip: padding-box;
+}
+
+.glass-effect {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Selection Color */
+::selection {
+  background: hsl(252, 87%, 67%, 0.3);
+  color: hsl(0, 0%, 98%);
+}
+
+.animate-scroll {
+  animation: scroll-left 20s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Custom class for bold modern text */
+.modern-font {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700; /* Bold weight */
+  letter-spacing: 0.05em; /* Slightly increase spacing for emphasis */
+}
