@@ -6,14 +6,36 @@ export const metadata = {
   description: "Professional Experience and Projects by Subham Dubey",
 };
 
-// Utility function to format dates
-function formatDate(dateString) {
-  const options = { year: "numeric", month: "long" };
-  return new Date(dateString).toLocaleDateString(undefined, options);
+// Define the type for experience metadata
+interface ExperienceMetadata {
+  title: string;
+  company: string;
+  startDate: string;
+  endDate?: string; // Optional since "Present" is used if undefined
+  location: string;
+  responsibilities: string[];
 }
 
-// Mock data for experiences (based on your resume)
-function getExperiences() {
+// Define the type for an experience object
+interface Experience {
+  slug: string;
+  metadata: ExperienceMetadata;
+}
+
+// Utility function to format dates with error handling
+function formatDate(dateString: string): string {
+  const options: Intl.DateTimeFormatOptions = {
+    year: "numeric",
+    month: "long",
+  };
+  const date = new Date(dateString);
+  return isNaN(date.getTime())
+    ? "Invalid Date"
+    : date.toLocaleDateString(undefined, options);
+}
+
+// Mock data for experiences (typed)
+function getExperiences(): Experience[] {
   return [
     {
       slug: "full-stack-web-developer-intern-at-h4u",
@@ -36,7 +58,7 @@ function getExperiences() {
 
 // Main ExperiencePage Component
 export default function ExperiencePage() {
-  let allExperiences = getExperiences();
+  const allExperiences: Experience[] = getExperiences();
 
   return (
     <section>
