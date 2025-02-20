@@ -4,7 +4,7 @@ export const metaData = {
   name: "Subham Dubey",
   ogImage: "/opengraph-image.png",
   description:
-    "A clean, fast, and lightweight portfolio template built with Next.js, Vercel, and Tailwind CSS for optimal performance.",
+    "Full Stack Developer and Photographer",
 };
 
 export const socialLinks = {
