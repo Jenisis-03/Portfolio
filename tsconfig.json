@@ -13,7 +13,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "baseUrl": ".",
+    "baseUrl": ".", // Already present, good!
+    "paths": {
+      "@/*": ["./*"],
+      "@/components/*": ["./components/*"] // Optional, for more specific aliasing
+    },
     "incremental": true,
     "plugins": [
       {
