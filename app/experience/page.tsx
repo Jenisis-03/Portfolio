@@ -1,17 +1,14 @@
+"use client";
 import Link from "next/link";
 
 // Metadata for the page
-export const metadata = {
-  title: "Subham Dubey - Experience",
-  description: "Professional Experience and Projects by Subham Dubey",
-};
 
 // Define the type for experience metadata
 interface ExperienceMetadata {
   title: string;
   company: string;
   startDate: string;
-  endDate?: string; // Optional since "Present" is used if undefined
+  endDate?: string;
   location: string;
   responsibilities: string[];
 }
@@ -46,10 +43,10 @@ function getExperiences(): Experience[] {
         endDate: "2023-06",
         location: "Kolkata, West Bengal",
         responsibilities: [
-          "Engineered and optimized five responsive web applications using Next.js, React.js, and Tailwind CSS, improving page load speeds by 30% and enhancing user satisfaction.",
-          "Collaborated with designers and product managers to translate complex requirements into actionable technical solutions, resulting in project delivery 20% ahead of schedule.",
-          "Architected and managed SQL(PostgreSQL, MySQL) and NoSQL(MongoDB) databases, deploying over 10 RESTful APIs for seamless data interaction, which improved data retrieval times by 25%.",
-          "Facilitated rigorous code reviews and led pair programming sessions, enhancing code quality by reducing bugs by 40% and fostering better team collaboration.",
+          "<i>Engineered</i> and <i>optimized</i> <strong>five responsive web applications</strong> using <strong>Next.js</strong>, <strong>React.js</strong>, and <strong>Tailwind CSS</strong>, improving page load speeds by <strong>30%</strong> and enhancing user satisfaction.",
+          "<i>Collaborated</i> with designers and product managers to <i>translate</i> complex requirements into <strong>actionable technical solutions</strong>, resulting in project delivery <strong>20% ahead of schedule</strong>.",
+          "<i>Architected</i> and <i>managed</i> <strong>SQL (PostgreSQL, MySQL)</strong> and <strong>NoSQL (MongoDB)</strong> databases, deploying over <strong>10 RESTful APIs</strong> for seamless data interaction, which improved data retrieval times by <strong>25%</strong>.",
+          "<i>Facilitated</i> rigorous code reviews and <i>led</i> pair programming sessions, enhancing code quality by reducing bugs by <strong>40%</strong> and fostering better <strong>team collaboration</strong>.",
         ],
       },
     },
@@ -61,19 +58,47 @@ export default function ExperiencePage() {
   const allExperiences: Experience[] = getExperiences();
 
   return (
-    <section>
-      <h1 className="mb-8 text-2xl font-medium tracking-tight">
-        My Experience
-      </h1>
-      <div>
-        {allExperiences.map((experience) => (
-          <div key={experience.slug} className="flex flex-col space-y-1 mb-5">
-            <div className="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-2">
-              <div>
-                <h2 className="text-black dark:text-white font-semibold">
+    <>
+      <style>
+        {`@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Diplomata+SC&family=Monomakh&family=Roboto+Mono:ital,wght@0,600;1,600&display=swap');`}
+      </style>
+      <section style={{ padding: "20px" }}>
+        {/* Experience Section */}
+        <h1
+          style={{
+            marginBottom: "20px",
+            fontFamily: "'Courier Prime', monospace",
+            fontWeight: "700",
+            fontSize: "28px",
+          }}
+        >
+          My Experience
+        </h1>
+        <div>
+          {allExperiences.map((experience) => (
+            <div key={experience.slug} style={{ marginBottom: "20px" }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  marginBottom: "10px",
+                }}
+              >
+                <h2
+                  style={{
+                    fontFamily: "'Courier Prime', monospace",
+                    fontWeight: "700",
+                    fontSize: "20px",
+                  }}
+                >
                   {experience.metadata.title} at {experience.metadata.company}
                 </h2>
-                <p className="text-neutral-600 dark:text-neutral-400 text-sm">
+                <p
+                  style={{
+                    fontFamily: "'Courier Prime', monospace",
+                    fontSize: "14px",
+                  }}
+                >
                   {formatDate(experience.metadata.startDate)} -{" "}
                   {experience.metadata.endDate
                     ? formatDate(experience.metadata.endDate)
@@ -81,53 +106,99 @@ export default function ExperiencePage() {
                   | {experience.metadata.location}
                 </p>
               </div>
+              <ul style={{ paddingLeft: "20px", listStyleType: "disc" }}>
+                {experience.metadata.responsibilities.map((responsibility, index) => (
+                  <li
+                    key={index}
+                    style={{
+                      fontFamily: "'Courier Prime', monospace",
+                      marginBottom: "5px",
+                    }}
+                    dangerouslySetInnerHTML={{ __html: responsibility }}
+                  />
+                ))}
+              </ul>
             </div>
-            <ul className="list-disc pl-5 text-neutral-700 dark:text-neutral-300">
-              {experience.metadata.responsibilities.map(
-                (responsibility, index) => (
-                  <li key={index}>{responsibility}</li>
-                )
-              )}
-            </ul>
-          </div>
-        ))}
-      </div>
-
-      {/* Education Section */}
-      <h2 className="mt-10 mb-6 text-xl font-medium tracking-tight">
-        Education
-      </h2>
-      <div>
-        <div className="mb-3">
-          <h3 className="text-black dark:text-white font-semibold">
-            Bachelor of Technology in Computer Science and Engineering
-          </h3>
-          <p className="text-neutral-600 dark:text-neutral-400 text-sm">
-            Narula Institute of Technology, Kolkata, West Bengal | October 2021
-            – Present
-          </p>
+          ))}
         </div>
+
+        {/* Education Section */}
+        <h2
+          style={{
+            marginTop: "30px",
+            marginBottom: "15px",
+            fontFamily: "'Courier Prime', monospace",
+            fontWeight: "700",
+            fontSize: "24px",
+          }}
+        >
+          Education
+        </h2>
         <div>
-          <h3 className="text-black dark:text-white font-semibold">
-            Higher Secondary
-          </h3>
-          <p className="text-neutral-600 dark:text-neutral-400 text-sm">
-            Central Model School, Kolkata, West Bengal | May 2019 – May 2021
+          <div style={{ marginBottom: "15px" }}>
+            <h3
+              style={{
+                fontFamily: "'Courier Prime', monospace",
+                fontWeight: "700",
+                fontSize: "18px",
+              }}
+            >
+              <strong>Bachelor of Technology</strong> in <i>Computer Science and Engineering</i>
+            </h3>
+            <p
+              style={{
+                fontFamily: "'Courier Prime', monospace",
+                fontSize: "14px",
+              }}
+            >
+              Narula Institute of Technology, Kolkata, West Bengal | October 2021 – Present
+            </p>
+          </div>
+          <div>
+            <h3
+              style={{
+                fontFamily: "'Courier Prime', monospace",
+                fontWeight: "700",
+                fontSize: "18px",
+              }}
+            >
+              Higher Secondary
+            </h3>
+            <p
+              style={{
+                fontFamily: "'Courier Prime', monospace",
+                fontSize: "14px",
+              }}
+            >
+              Central Model School, Kolkata, West Bengal | May 2019 – May 2021
+            </p>
+          </div>
+        </div>
+
+        {/* Achievements Section */}
+        <h2
+          style={{
+            marginTop: "30px",
+            marginBottom: "15px",
+            fontFamily: "'Courier Prime', monospace",
+            fontWeight: "700",
+            fontSize: "24px",
+          }}
+        >
+          Achievements
+        </h2>
+        <div>
+          <p
+            style={{
+              fontFamily: "'Courier Prime', monospace",
+              fontSize: "14px",
+            }}
+          >
+            <strong>Publication</strong>: Dubey, Subham et al.(2024). “<i>Disease Prediction using Machine Learning</i>”. In:
+            Proceedings of the <strong>2024 2nd World Conference</strong> on Communication & Computing. forthcoming. <strong>IEEE</strong>.
           </p>
         </div>
-      </div>
-
-      {/* Achievements Section */}
-      <h2 className="mt-10 mb-6 text-xl font-medium tracking-tight">
-        Achievements
-      </h2>
-      <div>
-        <p className="text-neutral-600 dark:text-neutral-400 text-sm">
-          Publication: Dubey, Subham et al.(2024). “Disease Prediction using
-          Machine Learning”. In: Proceedings of the 2024 2nd World Conference on
-          Communication & Computing. forthcoming. IEEE.
-        </p>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

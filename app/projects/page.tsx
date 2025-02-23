@@ -1,8 +1,7 @@
-// app/projects/page.tsx
 "use client";
 import { useState } from "react";
 import { projects } from "./project-data";
-import ProjectItem from "./ProjectItem"; // Default import, no curly braces
+import ProjectItem from "./ProjectItem";
 
 export default function Projects() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -12,9 +11,18 @@ export default function Projects() {
   };
 
   return (
-    <section>
-      <h1 className="mb-8 text-2xl font-medium tracking-tight">Projects</h1>
-      <div className="space-y-4">
+    <section style={{ padding: "20px" }}>
+      <h1
+        style={{
+          marginBottom: "20px",
+          fontFamily: "'Courier Prime', monospace",
+          fontWeight: "700",
+          fontSize: "28px",
+        }}
+      >
+        Projects
+      </h1>
+      <div>
         {projects.map((project, index) => (
           <ProjectItem
             key={index}

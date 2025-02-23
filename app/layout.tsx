@@ -73,6 +73,10 @@ export default function RootLayout({
           href="/feed.json"
           title="JSON Feed"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Diplomata+SC&family=Monomakh&family=Roboto+Mono:ital,wght@0,600;1,600&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body className="antialiased flex flex-col items-center justify-center mx-auto mt-2 lg:mt-8 mb-20 lg:mb-40">
         <ThemeProvider
