@@ -10,49 +10,68 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: "Disease Predict ML",
-
     description:
-      "A machine learning model designed to predict diseases based on patient data.",
+      "A sophisticated machine learning model designed to predict diseases based on patient data, enabling early detection and reducing healthcare costs.",
     realWorldProblem:
-      "Helps in early detection of diseases, enabling timely medical intervention and reducing healthcare costs.",
+      "Addresses the need for early disease detection, allowing for timely medical interventions and minimizing healthcare expenditures.",
     learnings:
-      "Gained expertise in supervised machine learning algorithms, feature engineering, and model evaluation metrics like accuracy, precision, and recall. Learned how to preprocess healthcare data and implement predictive models that can be integrated into healthcare systems.",
+      "Mastered supervised ML algorithms (logistic regression, decision trees, SVMs), feature engineering, and evaluation metrics (accuracy, precision, recall, F1 score). Gained expertise in preprocessing healthcare datasets and integrating predictive models into healthcare systems.",
     techStack: ["Python", "Scikit-learn", "Pandas", "NumPy", "Matplotlib"],
     url: "https://github.com/Jenisis-03/disease-predict-ml.git",
   },
   {
     title: "Vector Mind",
-
     description:
-      "A vector-based AI solution for natural language processing tasks.",
+      "An advanced vector-based AI solution for natural language processing tasks, enhancing semantic understanding in chatbots, search engines, and recommendation systems.",
     realWorldProblem:
-      "Improves text analysis and semantic understanding, which can be applied in chatbots, search engines, and recommendation systems.",
+      "Improves text analysis and semantic understanding for better conversational AI, search accuracy, and personalized recommendations.",
     learnings:
-      "Developed skills in vector embeddings (e.g., Word2Vec, BERT) and similarity computations. Learned how to optimize NLP pipelines for real-time applications and deploy scalable solutions using cloud platforms.",
+      "Developed skills in vector embeddings (Word2Vec, BERT), similarity computations, and optimization of NLP pipelines for real-time applications. Deployed scalable solutions using cloud platforms.",
     techStack: ["Python", "TensorFlow", "Hugging Face Transformers", "Flask"],
     url: "https://github.com/Jenisis-03/vector-mind.git",
   },
   {
     title: "InvoiceIt",
-
     description:
-      "A tool for generating and managing invoices for small businesses.",
+      "An intuitive invoice generation and management tool designed for freelancers and small businesses to streamline billing processes.",
     realWorldProblem:
-      "Simplifies invoice creation and management, saving time for freelancers and small business owners while ensuring accurate billing.",
+      "Simplifies invoice creation and management, saving time for small business owners and ensuring accurate billing.",
     learnings:
-      "Learned about backend development, database design, and REST API creation. Gained hands-on experience with full-stack development and implementing CRUD operations in a production-like environment.",
+      "Acquired knowledge in backend development, REST API creation, database design, and full-stack development with production-ready CRUD operations.",
     techStack: ["Node.js", "Express", "MongoDB", "React", "Bootstrap"],
     url: "https://github.com/Jenisis-03/invoiceit.git",
   },
   {
     title: "RSVP",
     description:
-      "An event management system for tracking RSVPs and organizing events.",
+      "A robust event management system for tracking RSVPs, guest list management, and automated attendee communications.",
     realWorldProblem:
       "Streamlines event planning by automating RSVP tracking, guest list management, and communication with attendees.",
     learnings:
-      "Improved skills in frontend development, user authentication, and state management. Learned how to build responsive web applications and integrate third-party APIs for email notifications and calendar syncing.",
+      "Strengthened frontend development, user authentication, and state management skills. Integrated third-party APIs for email notifications and calendar syncing.",
     techStack: ["React", "Redux", "Firebase", "Tailwind CSS", "SendGrid API"],
     url: "https://github.com/Jenisis-03/RSVP.git",
+  },
+  {
+    title: "Inventory Management System",
+    description:
+      "An efficient inventory management tool aimed at optimizing stock tracking and operational workflows.",
+    realWorldProblem:
+      "Improves inventory management accuracy, enhancing operational efficiency for businesses.",
+    learnings:
+      "Gained expertise in database design, API integrations, and scalable full-stack application development.",
+    techStack: ["Node.js", "Express", "MongoDB", "React"],
+    url: "https://github.com/Jenisis-03/Inventory-Management.git",
+  },
+  {
+    title: "Vector",
+    description:
+      "Advanced NLP solutions utilizing cutting-edge machine learning models for enhanced semantic analysis.",
+    realWorldProblem:
+      "Enhances semantic analysis capabilities crucial for search engines and recommendation systems.",
+    learnings:
+      "Focused on advanced NLP techniques, real-time application optimizations, and deployment on cloud infrastructures.",
+    techStack: ["Python", "TensorFlow", "Hugging Face Transformers", "Flask"],
+    url: "https://github.com/Jenisis-03/Vector.git",
   },
 ];

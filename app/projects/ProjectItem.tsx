@@ -13,14 +13,16 @@ export default function ProjectItem({ project, isOpen, onToggle }: ProjectItemPr
   return (
     <div style={{ marginBottom: "20px" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "10px" }}>
-        <Link
-          href={project.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ fontFamily: "'Courier Prime', monospace", fontSize: "20px", fontWeight: "700" }}
-        >
-          {project.title} 
-        </Link>
+        <h3>
+          <Link
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ fontFamily: "'Courier Prime', monospace", fontSize: "20px", fontWeight: "700" }}
+          >
+            {project.title}
+          </Link>
+        </h3>
         <Button
           onClick={onToggle}
           style={{
@@ -36,7 +38,7 @@ export default function ProjectItem({ project, isOpen, onToggle }: ProjectItemPr
           aria-label={`Toggle ${project.title} details`}
         >
           <svg
-            style={{ width: "16px", height: "16px", transform: isOpen ? "rotate(180deg)" : "none" }}
+            style={{ width: "16px", height: "16px", transform: isOpen ? "rotate(180deg)" : "" }}
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -46,24 +48,22 @@ export default function ProjectItem({ project, isOpen, onToggle }: ProjectItemPr
         </Button>
       </div>
       {isOpen && (
-        <div style={{ paddingLeft: "20px", fontFamily: "'Courier Prime', monospace", fontWeight: "700" }}>
+        <div
+          role="region"
+          aria-labelledby={`${project.title}-details`}
+          style={{ paddingLeft: "20px", fontFamily: "'Courier Prime', monospace", fontWeight: "700" }}
+        >
           <p style={{ marginBottom: "10px" }}>
-            <strong style={{ fontWeight: "700" }}>Description:</strong> {project.description}
+            <strong>Description:</strong> {project.description}
           </p>
           <p style={{ marginBottom: "10px" }}>
-            <strong style={{ fontWeight: "700" }}>Real-World Problem:</strong> {project.realWorldProblem}
+            <strong>Real-World Problem:</strong> {project.realWorldProblem}
           </p>
           <p style={{ marginBottom: "10px" }}>
-            <strong style={{ fontWeight: "700" }}>Learnings:</strong> {project.learnings}
+            <strong>Learnings:</strong> {project.learnings}
           </p>
           <p>
-            <strong style={{ fontWeight: "700" }}>Tech Stack:</strong>{" "}
-            {project.techStack.map((tech, idx) => (
-              <i key={idx}>
-                {tech}
-                {idx < project.techStack.length - 1 ? ", " : ""}
-              </i>
-            ))}
+            <strong>Tech Stack:</strong> <i>{project.techStack.join(", ")}</i>
           </p>
         </div>
       )}
