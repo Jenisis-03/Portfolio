@@ -176,7 +176,7 @@ const ResumeButton = memo(() => (
       target.style.transform = "scale(1)";
     }}
   >
-    <span style={{ position: "relative", zIndex: 1 }}> >> Download Resume</span>
+    <span style={{ position: "relative", zIndex: 1 }}> Download Resume</span>
     <span
       style={{
         position: "absolute",
